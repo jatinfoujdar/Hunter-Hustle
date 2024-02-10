@@ -44,7 +44,7 @@ function App() {
   const [letterColors, setLetterColors] = useState(
     Array(grid.length)
       .fill()
-      .map(() => Array(grid[0].length).fill("#CFCFCF"))
+      .map(() => Array(grid[0].length).fill("#00cec9"))
   );
 
 
@@ -89,7 +89,7 @@ function App() {
     } else {
 
       for (let pos of selectedPositions) {
-        newColors[pos[0]][pos[1]] = "#CFCFCF";
+        newColors[pos[0]][pos[1]] = "#00cec9";
       }
     }
 
@@ -102,14 +102,14 @@ function App() {
   
   return (
     <div className="bg-gradient-to-t flex-col from-lime-50 to-sky-100 min-w-screen min-h-screen flex items-center justify-center">
-    <h1 class="text-5xl mb-4 font-semibold text-blue-950">Code Terminology Word <span class="text-yellow-500">Search</span></h1>
+    <h1 class="text-4xl mt-6 mb-4 font-semibold text-blue-950">Code Terminology Word <span class="text-yellow-500">Search</span></h1>
      <h2 className=" text-4xl p-4 font-bold text-center text-[#CFCFCF]"> </h2>
       <table className="table-auto ">
         <tbody>
           {grid.map((row, rowIndex) => (
             <tr key={rowIndex}>
               {row.map((letter, colIndex) => (
-                <td className="px-6 py-2 border font-bold "
+                <td className="px-7 py-3 border font-bold "
                   key={colIndex}
                   style={{ backgroundColor: letterColors[rowIndex][colIndex] }}
                   onClick={() => handleLetterClick(letter, rowIndex, colIndex)}
@@ -133,7 +133,7 @@ function App() {
         <h3 className="font-extrabold text-lg  ">Words to find:</h3>
         <div className="grid grid-cols-5 gap-4 justify-items-center mx-auto" style={{ width: 'calc(100% - 60px)', margin: '20px auto' }}>
           {wordsToFind.map((word, index) => (
-            <div key={word} className={`word-item text-center text-[#CFCFCF] ${foundWords.includes(word) ? 'line-through' : ''}`}>
+            <div key={word} className={`word-item text-center font-bold ${foundWords.includes(word) ? 'line-through' : ''}`}>
               <p style={{ textDecoration: foundWords.includes(word) ? "line-through" : "none" }}>
                 {word}
               </p>
