@@ -98,9 +98,10 @@ function WordQuest() {
 
   return (
     <div className="bg-gradient-to-t flex-col from-lime-50 to-sky-100 min-w-screen min-h-screen flex items-center justify-center">
-      <h1 className="text-4xl mt-6 mb-4 font-semibold text-blue-950">
+      <h1 className="text-4xl mt-6 mb-4 font-semibold text-blue-950">Welcome to Hunter Hustle App</h1>
+      <h3 className="text-2xl mt-6 mb-4 font-semibold text-blue-950">
         Code Terminology Word <span className="text-yellow-500">Search</span>
-      </h1>
+      </h3>
       <h2 className="text-4xl p-4 font-bold text-center text-[#CFCFCF]"> </h2>
       <table className="table-auto">
         <tbody>

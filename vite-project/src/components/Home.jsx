@@ -43,7 +43,8 @@ const Home = () => {
       </div>
       <div className="mt-16 text-2xl font-bold text-[#008080]">Your Progress</div>
       <div className="w-3/4 h-2 bg-[#B3E0E6] rounded-full mt-4">
-        <div className="h-full bg-[#008080] rounded-full" style={{ width: `${progress}%` }}></div>
+        
+      <div className="h-full bg-[#008080] rounded-full" style={{ width: `${progress}%` }}></div>
       </div>
     </div>
   );
