@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { TiThMenu } from "react-icons/ti";
 
 const Home = () => {
   const [progress, setProgress] = useState(0);
@@ -8,7 +9,11 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-[#E6FCFF]">
+    <div className='bg-[#E6FCFF]'>
+    <div className='p-4'>
+      <TiThMenu className='h-5 w-5'/>
+    </div>
+    <div className="flex flex-col items-center justify-center h-screen ">
       <div className="text-4xl font-bold text-[#008080] my-10">Welcome to Hunter Hustle App</div>
       <div className="grid grid-cols-2 gap-4 w-3/4">
         <Link to="/wordquest" className="flex flex-col items-center justify-center py-4 px-6 rounded-xl bg-[#FFCCE6] text-[#800000] font-semibold text-lg hover:bg-[#FF99CC] transition-colors duration-300">
@@ -46,6 +51,7 @@ const Home = () => {
         
       <div className="h-full bg-[#008080] rounded-full" style={{ width: `${progress}%` }}></div>
       </div>
+    </div>
     </div>
   );
 }
