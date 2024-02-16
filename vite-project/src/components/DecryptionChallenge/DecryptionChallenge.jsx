@@ -43,7 +43,9 @@ const DecryptionChallenge = ({ progressToNextLevel, progress, setProgress }) => 
         {!isSuccess && !errorMessage && <button className="bg-yellow-500 p-2 mt-2 duration-150 hover:!border-b-2 text-blue-950 rounded-xl drop-shadow-lg group flex items-center border-2 border-b-4 border-blue-950 cursor-pointer active:bg-yellow-400" onClick={handleCompletion} >Decrypt and Submit</button>}
         {isSuccess && <div >Correct! You've deciphered the message.</div>}
         {errorMessage && <div className="error-message">{errorMessage}</div>}
-        
+        <div className="w-3/4 h-2  bg-[#B3E0E6] rounded-full mt-10 ">
+        <div className="h-full bg-[#008080]  rounded-full" style={{ width: `${progress}%` }}></div>
+      </div>
       </div>
     );
 }
