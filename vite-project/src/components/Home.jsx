@@ -9,7 +9,7 @@ const Home = () => {
   };
 
   return (
-    <div className='bg-[#E6FCFF]'>
+    <div className='bg-gradient-to-t flex-col from-lime-50 to-sky-100 '>
     <div className='p-4'>
       <TiThMenu className='h-5 w-5'/>
     </div>

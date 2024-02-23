@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import WordQuest from "./components/WordQuest/WordQuest.jsx";
 import Home from './components/Home.jsx';
 import DecryptionChallenge from './components/DecryptionChallenge/DecryptionChallenge.jsx';
+import JsonParser from './components/JsonParser/JsonParser.jsx';
 
 const App = () => {
   const [progress, setProgress] = useState(0); 
@@ -18,6 +19,10 @@ const App = () => {
         <Route
           path="/decryption-challenge"
           element={<DecryptionChallenge progress={progress} setProgress={setProgress} />}
+        />
+        <Route
+          path="/json"
+          element={<JsonParser progress={progress} setProgress={setProgress} />}
         />
       </Routes>
     </Router>
