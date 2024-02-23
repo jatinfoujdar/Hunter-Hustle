@@ -1,18 +1,34 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { TiThMenu } from "react-icons/ti";
+import { TbJson } from "react-icons/tb";
+import { IoClose } from "react-icons/io5";
 
 const Home = () => {
   const [progress, setProgress] = useState(0);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const updateProgress = (newProgress) => {
     setProgress(newProgress);
   };
 
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen); 
+  };
+
   return (
-    <div className='bg-gradient-to-t flex-col from-lime-50 to-sky-100 '>
+    <div className='bg-gradient-to-t flex-col from-lime-50 to-sky-100 relative'>
     <div className='p-4'>
-      <TiThMenu className='h-5 w-5'/>
+      {isSidebarOpen ? (
+        <IoClose className='h-7 w-7 absolute  z-10 ' onClick={toggleSidebar} />
+      ) : (
+        <TiThMenu className='h-5 w-5' onClick={toggleSidebar} />
+      )}
     </div>
+    {isSidebarOpen && (
+      <div className="absolute top-8 left-0 w-60 rounded-md bg-white shadow h-screen">
+        <TbJson className='h-5 w-5 m-8'/>
+      </div>
+    )}
     <div className="flex flex-col items-center justify-center h-screen ">
       <div className="text-4xl font-bold text-[#008080] my-10">Welcome to Hunter Hustle App</div>
       <div className="grid grid-cols-2 gap-4 w-3/4">
