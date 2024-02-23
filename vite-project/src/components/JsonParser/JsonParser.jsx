@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { IoHome } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 function JsonParser() {
   const [jsonInput, setJsonInput] = useState("");
@@ -21,7 +22,9 @@ function JsonParser() {
   return (
     <div className="bg-gradient-to-t from-lime-50 to-sky-100 min-w-screen min-h-screen flex flex-col items-center justify-center">
       <div className="absolute top-0 left-0 ml-4 mt-4">
+        <Link to="/" className="absolute top-0 left-0 ml-4 mt-4">
         <IoHome className="text-2xl" />
+      </Link>
       </div>
       <div className="flex flex-col items-center justify-center">
         <h1 className="text-2xl mt-6 mb-4 font-semibold text-blue-950">JSON <span className="text-yellow-500">Parser</span></h1>
