@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { TiThMenu } from "react-icons/ti";
-import { TbJson } from "react-icons/tb";
+import { LuFileJson2 } from "react-icons/lu";
 import { IoClose } from "react-icons/io5";
 
 const Home = () => {
@@ -25,9 +25,13 @@ const Home = () => {
       )}
     </div>
     {isSidebarOpen && (
-      <div className="absolute top-8 left-0 w-60 rounded-md bg-white shadow h-screen">
-        <TbJson className='h-5 w-5 m-8'/>
-      </div>
+    <a href="/json" className="absolute top-8 left-0 w-60 rounded-md bg-white shadow h-screen flex ">
+    <LuFileJson2 className='h-8 w-8 m-8' />
+    <p className=" mt-8 text-md">JSON Parser</p>
+    
+  </a>
+  
+  
     )}
     <div className="flex flex-col items-center justify-center h-screen ">
       <div className="text-4xl font-bold text-[#008080] my-10">Welcome to Hunter Hustle App</div>
