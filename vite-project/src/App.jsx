@@ -4,6 +4,7 @@ import WordQuest from "./components/WordQuest/WordQuest.jsx";
 import Home from './components/Home.jsx';
 import DecryptionChallenge from './components/DecryptionChallenge/DecryptionChallenge.jsx';
 import JsonParser from './components/JsonParser/JsonParser.jsx';
+import CodeTrivia from './components/CodeTrivia/CodeTrivia.jsx';
 
 const App = () => {
   const [progress, setProgress] = useState(0); 
@@ -24,6 +25,7 @@ const App = () => {
           path="/json"
           element={<JsonParser progress={progress} setProgress={setProgress} />}
         />
+        <Route path="/code-trivia" element={<CodeTrivia />} />
       </Routes>
     </Router>
   );
