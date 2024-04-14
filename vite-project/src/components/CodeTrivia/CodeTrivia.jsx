@@ -48,7 +48,7 @@ const CodeTrivia = () => {
         <p className='mb-3 text-xl font-bold leading-snug text-gray-900'>{question.question}</p>
         <ul>
           {question.options.map((option, index) => (
-            <li className='p-2 border ' key={index}>{option}</li>
+            <li className='p-2 border border-black ' key={index}>{option}</li>
           ))}
         </ul>
       </div>
