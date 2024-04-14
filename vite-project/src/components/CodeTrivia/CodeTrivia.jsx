@@ -28,7 +28,7 @@ const CodeTrivia = () => {
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
-      // Handle end of questions, e.g., show results or reset to first question
+    
       setCurrentQuestion(0);
     }
   };
