@@ -45,14 +45,15 @@ const CodeTrivia = () => {
         <strong className="text-red-500">From "Just Do It" </strong> to "I'm Lovin' It".
       </p>
       <div>
-        <p>{question.question}</p>
+        <p className='mb-3 text-xl font-bold leading-snug text-gray-900'>{question.question}</p>
         <ul>
           {question.options.map((option, index) => (
-            <li key={index}>{option}</li>
+            <li className='p-2 border ' key={index}>{option}</li>
           ))}
         </ul>
       </div>
-      <button onClick={handleNextQuestion}>Next Question</button>
+      <button className='bg-yellow-500 p-2 mt-2 duration-150 hover:!border-b-2 text-blue-950 rounded-xl drop-shadow-lg group flex items-center border-2 border-b-4 border-blue-950 cursor-pointer active:bg-yellow-400' 
+      onClick={handleNextQuestion}>Next Question</button>
     </div>
   );
 };
