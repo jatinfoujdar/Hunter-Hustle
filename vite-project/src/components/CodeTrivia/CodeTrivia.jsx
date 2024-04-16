@@ -22,15 +22,33 @@ const questions = [
 
 const CodeTrivia = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [incorrectMessage, setIncorrectMessage] = useState('');
+
   const question = questions[currentQuestion];
 
   const handleNextQuestion = () => {
-    if (currentQuestion < questions.length - 1) {
-      setCurrentQuestion(currentQuestion + 1);
-    } else {
-    
-      setCurrentQuestion(0);
+    if (selectedOption === null) {
+      setIncorrectMessage("Please select an option.");
+      return;
     }
+
+    if (selectedOption === question.correctAnswer) {
+      if (currentQuestion < questions.length - 1) {
+        setCurrentQuestion(currentQuestion + 1);
+        setSelectedOption(null);
+        setIncorrectMessage('');
+      } else {
+        setIncorrectMessage("Congratulations! You've completed all questions.");
+      }
+    } else {
+      setIncorrectMessage("Incorrect answer. Try again.");
+    }
+  };
+
+  const handleOptionSelect = (index) => {
+    setSelectedOption(index);
+    setIncorrectMessage('');
   };
 
   return (
@@ -45,15 +63,26 @@ const CodeTrivia = () => {
         <strong className="text-red-500">From "Just Do It" </strong> to "I'm Lovin' It".
       </p>
       <div>
-        <p className='mb-3 text-xl font-bold leading-snug text-gray-900'>{question.question}</p>
+        <p className='mb-3 text-xl font-bold leading-snug text-gray-900'>Q: {question.question}</p>
         <ul>
           {question.options.map((option, index) => (
-            <li className='p-2 border border-black ' key={index}>{option}</li>
+            <li 
+              className={`p-2 border border-black ${selectedOption === index ? 'bg-blue-200' : ''}`} 
+              key={index} 
+              onClick={() => handleOptionSelect(index)}
+            >
+              {option}
+            </li>
           ))}
         </ul>
       </div>
-      <button className='bg-yellow-500 p-2 mt-2 duration-150 hover:!border-b-2 text-blue-950 rounded-xl drop-shadow-lg group flex items-center border-2 border-b-4 border-blue-950 cursor-pointer active:bg-yellow-400' 
-      onClick={handleNextQuestion}>Next Question</button>
+      <p className="text-red-500">{incorrectMessage}</p>
+      <button 
+        className='bg-yellow-500 p-2 mt-2 duration-150 hover:!border-b-2 text-blue-950 rounded-xl drop-shadow-lg group flex items-center border-2 border-b-4 border-blue-950 cursor-pointer active:bg-yellow-400' 
+        onClick={handleNextQuestion}
+      >
+        Next Question
+      </button>
     </div>
   );
 };
