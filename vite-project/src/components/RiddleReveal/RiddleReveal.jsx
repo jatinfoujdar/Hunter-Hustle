@@ -47,22 +47,23 @@ const RiddleReveal = ({ progressToNextLevel })=> {
 
   return (
     <div className="bg-gradient-to-t flex-col from-lime-50 to-sky-100 min-w-screen min-h-screen flex items-center justify-center"> 
-    <div className="absolute top-0 left-0 ml-4 mt-4">
-     <Link to="/" className="absolute top-0 left-0 ml-4 mt-4">
-     <IoHome className="text-2xl" />
-   </Link>
-   </div>
-    <div className="container mx-auto py-8 px-4">
+      <div className="absolute top-0 left-0 ml-4 mt-4">
+        <Link to="/" className="absolute top-0 left-0 ml-4 mt-4">
+          <IoHome className="text-2xl" />
+        </Link>
+      </div>
+    
       <h2 className="text-4xl mt-6 mb-4 font-semibold text-blue-950">Riddle <span className="text-yellow-500">Reveal</span></h2>
-      <p className="text-lg mb-4">Answer the riddle related to coding and select the right digital box.</p>
+      <p className=" text-yellow-500 mt-6  text-2xl mb-4 ">Answer the riddle related to coding and select the right digital box.</p>
+      <strong className="text-red-500">
       <p className="text-lg riddle mb-4">The more you code, the more of me there is.<br />
-        I may be gone for now but you can’t get rid of me forever.<br />
-        What am I?</p>
-      <div className="grid grid-cols-5 gap-4">
+      <p className='text-fuchsia-950'>I may be gone for now but you can’t get rid of me forever.<br /></p> 
+        What am I?</p></strong>
+      <div className="grid grid-cols-5 gap-4 ">
         {boxes.map((box, index) => (
           <div 
             key={index}
-            className={`box p-4 bg-gray-200 flex items-center justify-center cursor-pointer border border-gray-300 ${box ? "opacity-50" : ""}`}
+            className={`box p-8 bg-gray-200 flex items-center justify-center cursor-pointer border border-gray-300 ${box ? "opacity-50" : ""}`}
             onClick={() => handleClickBox(index)}
           >
             {(box && index === chosenBox) ? "🏆" : emojis[index]}  {/* Displays trophy if correct box is clicked */}
@@ -76,7 +77,6 @@ const RiddleReveal = ({ progressToNextLevel })=> {
       )}
     </div>
     
-    </div>
   );
 }
 
