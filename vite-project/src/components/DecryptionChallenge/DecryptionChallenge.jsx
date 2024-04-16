@@ -35,6 +35,7 @@ const DecryptionChallenge = ({ progressToNextLevel, progress, setProgress }) => 
         <IoHome className="text-2xl" />
       </Link>
       </div>
+      <div className='bg-gradient-to-t flex-col from-lime-50 to-sky-100 min-w-screen min-h-screen flex items-center justify-center'>
         <h1 className="text-4xl mt-6 mb-4 font-semibold text-blue-950">Decryption  <span className="text-yellow-500">Challenge</span></h1>
         <p className="text-fuchsia-950 mt-6 mb-4 text-2xl"><strong className="text-red-500">Unlock the secret!</strong > Decode the encrypted message below to progress.</p>
         <p className="bg-black text-yellow-300 p-4 px-8 rounded-lg">{cipheredMessage}</p>
@@ -46,13 +47,11 @@ const DecryptionChallenge = ({ progressToNextLevel, progress, setProgress }) => 
           rows="3"
         />
         <br />
-        
+     
         {!isSuccess && !errorMessage && <button className="bg-yellow-500 p-2 mt-2 duration-150 hover:!border-b-2 text-blue-950 rounded-xl drop-shadow-lg group flex items-center border-2 border-b-4 border-blue-950 cursor-pointer active:bg-yellow-400" onClick={handleCompletion} >Decrypt and Submit</button>}
         {isSuccess && <div className='bg-black hover:bg-black text-yellow-500 font-bold py-2 px-4 rounded inline-flex items-center'>Correct! You've deciphered the message.</div>}
         {errorMessage && <div className='bg-red-500 hover:bg-red-900 text-white font-bold py-2 px-4 rounded inline-flex items-center'>{errorMessage}</div>}
-        <div className="w-2/4 h-2  bg-[#B3E0E6] rounded-full mt-10 ">
-        <div className="h-full bg-[#008080]  rounded-full" style={{ width: `${progress}%` }}></div>
-      </div>
+        </div>
       </div>
     );
 }
