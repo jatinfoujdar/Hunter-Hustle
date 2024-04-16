@@ -5,6 +5,7 @@ import Home from './components/Home.jsx';
 import DecryptionChallenge from './components/DecryptionChallenge/DecryptionChallenge.jsx';
 import JsonParser from './components/JsonParser/JsonParser.jsx';
 import CodeTrivia from './components/CodeTrivia/CodeTrivia.jsx';
+import RiddleReveal from './components/RiddleReveal/RiddleReveal.jsx';
 
 const App = () => {
   const [progress, setProgress] = useState(0); 
@@ -26,6 +27,7 @@ const App = () => {
           element={<JsonParser progress={progress} setProgress={setProgress} />}
         />
         <Route path="/code-trivia" element={<CodeTrivia />} />
+        <Route path='/riddle-reveal' element={<RiddleReveal/>} />
       </Routes>
     </Router>
   );
